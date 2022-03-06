@@ -1,0 +1,20 @@
+body {
+    box-sizing: border-box;
+}
+
+#calc {
+    width: fit-content;
+    height: auto;
+    border: solid 2px black;
+}
+
+#result {
+    border: solid 1px black;
+    width: auto;
+    height: 1em;
+}
+
+button {
+    width: 30px;
+    aspect-ratio: 1;
+}
