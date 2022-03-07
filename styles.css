@@ -9,9 +9,12 @@ body {
 }
 
 #result {
+    display: flex;
     border: solid 1px black;
     width: auto;
-    height: 1em;
+    height: 1.5em;
+    justify-content: end;
+    align-items: center;
 }
 
 button {
