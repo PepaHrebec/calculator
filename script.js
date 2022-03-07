@@ -2,15 +2,69 @@ const result = document.querySelector("#result");
 const num = document.querySelectorAll(".num");
 const sign = document.querySelectorAll(".sign");
 const equal = document.querySelector("#equal");
+const cancel = document.querySelector("#cancel");
+const dot = document.querySelector("#dot");
+const undo = document.querySelector("#undo");
 
 ////////////////////////////functions
 
-equal.addEventListener("click",() => {
-    firstNum=operate(firstNum,secondNum,symbol);
+undo.addEventListener("click", () => {
+    switch(numSwitch) {
+        case 0:
+            firstNum=String(firstNum).slice(0,String(firstNum).length-1); 
+            result.innerHTML=firstNum;
+            if(firstNum===""){
+                numSwitch=0;
+            }
+        break;
+        case 1:
+            if(secondNum!==""){
+                secondNum=String(secondNum).slice(0,String(secondNum).length-1); 
+                result.innerHTML=secondNum;   
+            } else {
+                firstNum=String(firstNum).slice(0,String(firstNum).length-1); 
+                result.innerHTML=firstNum;
+                if(firstNum===""){
+                    numSwitch=0;
+                };
+            };
+        break;
+    };        
+});
+
+dot.addEventListener("click",() => {
+    switch(numSwitch) {
+        case 0:
+            if(!firstNum.includes(".")) {
+                firstNum=firstNum+"."; 
+                result.innerHTML=firstNum;    
+            };
+        break;
+        case 1:
+            if(!secondNum.includes(".")) {
+                secondNum=secondNum+"."; 
+                result.innerHTML=secondNum;    
+            };
+        break;
+    };  
+});
+
+cancel.addEventListener("click", () => {
+    numSwitch=0;
+    symbol="";
+    firstNum="";
+    secondNum="";
     result.innerHTML=firstNum;
+});
+
+equal.addEventListener("click",() => {
+    if(symbol!==""){
+    firstNum=operate(firstNum,secondNum,symbol);
+    result.innerHTML=firstNum.toFixed(2);
     secondNum="";
     symbol="";
-})
+    };
+});
 
 num.forEach(numButton => {
     numButton.addEventListener("click",(e) => {
@@ -28,7 +82,7 @@ sign.forEach(signButton => {
     signButton.addEventListener("click", (e) => {
         if(secondNum!==""){
             firstNum=operate(firstNum,secondNum,symbol);
-            result.innerHTML=firstNum;
+            result.innerHTML=firstNum.toFixed(2);
             secondNum="";
         }
         symbol=`${e.target.innerHTML}`;
