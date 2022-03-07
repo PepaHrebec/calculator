@@ -9,6 +9,7 @@ equal.addEventListener("click",() => {
     firstNum=operate(firstNum,secondNum,symbol);
     result.innerHTML=firstNum;
     secondNum="";
+    symbol="";
 })
 
 num.forEach(numButton => {
@@ -25,6 +26,11 @@ num.forEach(numButton => {
 
 sign.forEach(signButton => {
     signButton.addEventListener("click", (e) => {
+        if(secondNum!==""){
+            firstNum=operate(firstNum,secondNum,symbol);
+            result.innerHTML=firstNum;
+            secondNum="";
+        }
         symbol=`${e.target.innerHTML}`;
         numSwitch=1;
     })
