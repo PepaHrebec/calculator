@@ -1,23 +1,49 @@
 body {
-    box-sizing: border-box;
-}
-
-#calc {
-    width: fit-content;
-    height: auto;
-    border: solid 2px black;
-}
-
-#result {
     display: flex;
-    border: solid 1px black;
-    width: auto;
-    height: 1.5em;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
 
+#calc {
+    margin-top: 30px;
+    width: 350px;
+    height: auto;
+    border: outset 4px black;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+#result {
+    padding-right: 10px;
+    display: flex;
+    border: inset 4px black;
+    width: auto;
+    height: 2em;
+    justify-content: end;
+    align-items: center;
+    font-size: 2em;
+}
+
 button {
-    width: 30px;
-    aspect-ratio: 1;
+    padding: 10px;
+    min-width: 30px;
+    height: auto;
+    flex: 1;
+    margin: 5px;
+    border-radius: 5px;
+    border: outset 4px black;
 }

@@ -59,10 +59,18 @@ cancel.addEventListener("click", () => {
 
 equal.addEventListener("click",() => {
     if(symbol!==""){
-    firstNum=operate(firstNum,secondNum,symbol);
-    result.innerHTML=firstNum.toFixed(2);
-    secondNum="";
-    symbol="";
+        if(secondNum==0 && symbol==="/") {
+            numSwitch=0;
+            symbol="";
+            firstNum="";
+            secondNum="";
+            result.innerHTML="";     
+        } else {
+            firstNum=operate(firstNum,secondNum,symbol);
+            result.innerHTML=firstNum.toFixed(2);
+            secondNum="";
+            symbol="";
+        }
     };
 });
 
@@ -72,18 +80,32 @@ num.forEach(numButton => {
             firstNum=firstNum+`${e.target.innerHTML}`;
             result.innerHTML=firstNum;
         } else {
+            if(firstNum!=="" && symbol==="") {
+                numSwitch=0;
+                firstNum=`${e.target.innerHTML}`;
+                result.innerHTML=firstNum;
+            } else {
             secondNum=secondNum+`${e.target.innerHTML}`;
             result.innerHTML=secondNum;  
-        }
+            };
+        };
     });
 });
 
 sign.forEach(signButton => {
     signButton.addEventListener("click", (e) => {
         if(secondNum!==""){
-            firstNum=operate(firstNum,secondNum,symbol);
-            result.innerHTML=firstNum.toFixed(2);
-            secondNum="";
+            if(secondNum==0 && symbol==="/") {
+                numSwitch=0;
+                symbol="";
+                firstNum="";
+                secondNum="";
+                result.innerHTML="";     
+            } else {
+                firstNum=operate(firstNum,secondNum,symbol);
+                result.innerHTML=firstNum.toFixed(2);
+                secondNum="";
+            };
         }
         symbol=`${e.target.innerHTML}`;
         numSwitch=1;
@@ -127,7 +149,7 @@ function operate(a,b,sign) {
     }
 };
 
-numSwitch=0;
-symbol="";
-firstNum="";
-secondNum="";
+let numSwitch=0;
+let symbol="";
+let firstNum="";
+let secondNum="";
