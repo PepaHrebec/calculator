@@ -2,13 +2,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F7EDE2;
+    font-family: 'Lora', serif;
+    font-size: 1.5em;
+    color: #F7EDE2;
 }
 
 #calc {
     margin-top: 30px;
     width: 350px;
     height: auto;
-    border: outset 4px black;
+    border: outset 4px #F5CAC3;
+    background-color: #F5CAC3;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -30,20 +35,37 @@ body {
 #result {
     padding-right: 10px;
     display: flex;
-    border: inset 4px black;
+    border: inset 4px #F5CAC3;
     width: auto;
     height: 2em;
     justify-content: end;
     align-items: center;
     font-size: 2em;
+    background-color: #84A59D;
 }
 
 button {
+    display: flex;
+    justify-content: center;
     padding: 10px;
     min-width: 30px;
     height: auto;
     flex: 1;
     margin: 5px;
     border-radius: 5px;
-    border: outset 4px black;
+    border: outset 4px #F6BD60;
+    background-color: #F6BD60;
+    font-family: 'Lora', serif;
+    font-size: 1em;
+    color: #F7EDE2;
+}
+
+.red {
+    background-color: #F28482;
+    border: outset 4px #F28482;
+}
+
+#equal {
+    background-color: #84A59D;
+    border: outset 4px #84A59D;
 }
