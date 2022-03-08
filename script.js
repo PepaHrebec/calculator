@@ -64,7 +64,8 @@ equal.addEventListener("click",() => {
             symbol="";
             firstNum="";
             secondNum="";
-            result.innerHTML="";     
+            result.innerHTML=""; 
+            window.alert("You can't divide by zero.");    
         } else {
             firstNum=operate(firstNum,secondNum,symbol);
             result.innerHTML=firstNum.toFixed(2);
@@ -100,7 +101,8 @@ sign.forEach(signButton => {
                 symbol="";
                 firstNum="";
                 secondNum="";
-                result.innerHTML="";     
+                result.innerHTML=""; 
+                window.alert("You can't divide by zero.");        
             } else {
                 firstNum=operate(firstNum,secondNum,symbol);
                 result.innerHTML=firstNum.toFixed(2);
