@@ -60,12 +60,28 @@ button {
     color: #F7EDE2;
 }
 
+.num:active,
+button:active {
+    background-color: #f59b0b;
+    border: inset 4px #f59b0b;
+}
+
 .red {
     background-color: #F28482;
     border: outset 4px #F28482;
 }
 
+.red:active {
+    background-color: #f94a47;
+    border: inset 4px #f94a47;
+}
+
 #equal {
     background-color: #84A59D;
     border: outset 4px #84A59D;
+}
+
+#equal:active {
+    background-color: #48a08a;
+    border: inset 4px #48a08a;
 }
